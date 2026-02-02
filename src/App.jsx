@@ -152,9 +152,9 @@ function App() {
     const angleStep = 360 / totalCats
     const angle = (index * angleStep + Math.random() * angleStep * 0.2) * (Math.PI / 180) // Less randomness
 
-    // Distance from center (card area) - increased to keep cats away from card
-    const radiusX = 40 + Math.random() * 10 // 40-50% from center horizontally
-    const radiusY = 40 + Math.random() * 10 // 40-50% from center vertically
+    // Distance from center (card area) - increased more to keep cats at viewport edges
+    const radiusX = 45 + Math.random() * 10 // 45-55% from center horizontally
+    const radiusY = 45 + Math.random() * 10 // 45-55% from center vertically
 
     // Calculate position using circular distribution
     const centerX = 50 // Center of viewport
@@ -163,9 +163,9 @@ function App() {
     const left = centerX + radiusX * Math.cos(angle)
     const top = centerY + radiusY * Math.sin(angle)
 
-    // Ensure cats stay within viewport bounds with generous margins to prevent cutoff
-    const boundedLeft = Math.max(8, Math.min(88, left))
-    const boundedTop = Math.max(8, Math.min(88, top))
+    // Ensure cats stay within viewport bounds with margins
+    const boundedLeft = Math.max(5, Math.min(92, left))
+    const boundedTop = Math.max(5, Math.min(92, top))
 
     return { left: boundedLeft, top: boundedTop }
   }

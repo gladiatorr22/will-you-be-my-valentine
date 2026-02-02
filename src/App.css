@@ -86,9 +86,9 @@
 .question-card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 2rem 1.5rem;
-  max-width: 90%;
+  border-radius: 20px;
+  padding: 1.25rem 1rem;
+  max-width: 85%;
   width: 100%;
   text-align: center;
   box-shadow: 0 20px 60px rgba(255, 77, 148, 0.3);
@@ -99,17 +99,17 @@
 
 .question-card h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-size: clamp(1.3rem, 4.5vw, 3rem);
   color: var(--pink-dark);
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
 }
 
 .question-card p {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-size: clamp(0.85rem, 2.5vw, 1.25rem);
   color: var(--purple-dark);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Button Container */
@@ -408,9 +408,9 @@
 .success-screen {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 3rem 2rem;
-  max-width: 90%;
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  max-width: 85%;
   width: 100%;
   text-align: center;
   box-shadow: 0 20px 60px rgba(255, 77, 148, 0.4);
@@ -436,8 +436,8 @@
 }
 
 .success-emoji {
-  font-size: clamp(4rem, 15vw, 8rem);
-  margin-bottom: 1rem;
+  font-size: clamp(3rem, 12vw, 6rem);
+  margin-bottom: 0.5rem;
   animation: heartPulse 1.5s ease infinite;
   display: inline-block;
 }
@@ -456,17 +456,17 @@
 
 .success-screen h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
   color: var(--pink-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   animation: slideInFromTop 0.6s ease 0.3s backwards;
 }
 
 .success-screen p {
   font-family: var(--font-body);
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.5rem);
   color: var(--purple-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   animation: slideInFromTop 0.6s ease 0.5s backwards;
 }
 
@@ -648,18 +648,17 @@
   height: 100%;
   pointer-events: none;
   z-index: 15;
-  /* Higher z-index for mobile - above card (z-index: 10) */
+  /* Above card so cats are visible */
   overflow: hidden;
 }
 
 /* Sad cat memes for "No" button */
 .cat-meme-no {
   position: absolute;
-  width: 60px;
-  /* Smaller size for mobile to prevent text overlap */
-  height: 60px;
+  width: 55px;
+  height: 55px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   animation: catFadeIn 0.5s ease forwards;
   will-change: transform;
@@ -668,11 +667,10 @@
 /* Happy cat memes for "Yes" button */
 .cat-meme-yes {
   position: absolute;
-  width: 70px;
-  /* Slightly larger for celebration but still compact */
-  height: 70px;
+  width: 65px;
+  height: 65px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(255, 77, 148, 0.4);
   animation: catCelebrate 0.6s ease forwards;
   will-change: transform, opacity;
@@ -734,19 +732,17 @@
 
 /* Side-eye cat emoji styling */
 .success-message-with-cat {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  display: inline;
+  line-height: 1.6;
 }
 
 .side-eye-cat-emoji {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.8rem;
+  height: 1.8rem;
   object-fit: contain;
   display: inline-block;
   vertical-align: middle;
+  margin-left: 0.3rem;
   animation: slideInFromRight 0.6s ease 0.5s backwards;
 }
 
@@ -764,7 +760,14 @@
 
 @media (min-width: 768px) {
   .side-eye-cat-emoji {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .success-message-with-cat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 }
